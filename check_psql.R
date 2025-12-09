@@ -48,19 +48,12 @@ con <- tryCatch(
   }
 )
 
-
 ntfy_send(
   message = glue("Connection to database was successfull."),
   topic = ntfy_topic
 )
 
 dbDisconnect(con)
-
-
-datasus_ftp_connection <- RCurl::url.exists(
-  "ftp.datasus.gov.br",
-  .opts = list(timeout = 260)
-)
 
 ntfy_send(message = glue("Status check job end: {now()}"), topic = ntfy_topic)
 cli_h1("END")
