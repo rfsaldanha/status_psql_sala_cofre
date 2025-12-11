@@ -48,5 +48,4 @@ ntfy_send(
 
 dbDisconnect(con)
 
-ntfy_send(message = glue("Status check job end: {now()}"), topic = ntfy_topic)
 cli_h1("END")
